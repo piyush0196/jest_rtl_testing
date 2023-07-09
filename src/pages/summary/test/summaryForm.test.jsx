@@ -15,7 +15,7 @@ test("Initially conditions", () => {
 });
 
 test("checkbox disables button on first click and enabled on second click", async () => {
-  const user = userEvent.setup();
+  const user = userEvent.setup();  // CREATING USER SESSION
 
   render(<SummaryForm />);
   const checkbox = screen.getByRole("checkbox", {

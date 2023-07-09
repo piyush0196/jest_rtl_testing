@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ScoopOption from "./ScoopOption";
-import { ToppingOption } from "./ToppingOption";
+import ToppingOption from "./ToppingOption";
 import { AlertBanner } from "../common/AlertBanner";
 import { Row } from "react-bootstrap";
 import { pricePerItem } from "../../constants";

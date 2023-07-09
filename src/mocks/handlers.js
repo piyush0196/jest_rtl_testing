@@ -34,4 +34,9 @@ export const handlers = [
       ])
     );
   }),
+  rest.get("http://localhost:3030/order", (req, res, ctx) => {
+    return res(
+      ctx.json({orderNumber: 1234587454})
+    );
+  }),
 ];
