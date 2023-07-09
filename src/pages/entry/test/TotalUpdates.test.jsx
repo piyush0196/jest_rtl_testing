@@ -64,11 +64,12 @@ describe('grand total', () => {
 
   test('Total starts at $0.00', () => {
     // Test that total starts at $0.00
-    render(<OrderEntry />)
+    const { unmount } = render(<OrderEntry />)
     const totalHeading = screen.getByRole('heading', { name: /Grand total: \$/ })
     // OR const totalHeading = screen.getByText('Grand total: $', { exact: false })
     expect(totalHeading).toHaveTextContent("0.00");
 
+    unmount()
   })
 
   test('Grand total updates properly if Scoop is added first', async () => {
