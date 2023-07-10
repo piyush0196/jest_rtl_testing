@@ -3,8 +3,13 @@ import { Button, Form } from "react-bootstrap";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 
-export const SummaryForm = () => {
+export const SummaryForm = ({ setOrderPhase }) => {
   const [tcChecked, setTcChecked] = useState(false);
+
+  const confirmOrderHandler = (e) => {
+    e.preventDefault();
+    setOrderPhase('completed');
+  }
 
   const popover = (
     <Popover id="popover-basic">
@@ -31,7 +36,7 @@ export const SummaryForm = () => {
           label={checkboxLabel}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" disabled={!tcChecked}>
+      <Button variant="primary" type="submit" disabled={!tcChecked} onClick={confirmOrderHandler}>
         Confirm order
       </Button>
     </Form>
